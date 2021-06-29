@@ -2,33 +2,35 @@
 
 此为`tailwind`的使用`demo`，让写`css` `效率倍增`
 
-## 初次使用方法
+## 使用方法
 
-### 1、安装`nvm`
+> **非初次使用，直接看第 4 步**
 
--   Windows 版本：[nvm](https://github.com/coreybutler/nvm-windows/releases)
+### 1、安装`nvm`**（非初次使用可跳过此步）**
+
+-   Windows 版本：[点击下载](https://github.com/coreybutler/nvm-windows/releases)
 
 -   其他操作系统：自行网上搜索
 
-### 2、安装`npm`
+### 2、安装`node`及`npm`**（非初次使用可跳过此步）**
 
--   `Windows10`系统：`Windows+S`快捷键搜索`Windows PowerShell`，请运行`nvm list availible`以查找可安装版本，运行安装命令`nvm install 15.5.1`，此命令会安装`nodejs 15.5.1`版本以及对应版本的`npm`，安装完成根据提示运行命令`nvm use 15.5.1`将安装的版本设置为当前使用版本
+-   `Windows10`系统：`Windows+S`快捷键搜索`Windows PowerShell`，请运行`nvm list availible`以查找可安装版本，运行安装命令`nvm install stable`，此命令会安装`node` LTS 版本以及对应版本的`npm`，安装完成根据提示运行命令（如`nvm use 14.17.1`）将安装的版本设置为当前使用版本
 
     ```
     nvm list available
     ```
 
     ```
-    nvm install 15.5.1
+    nvm install stable
     ```
 
     ```
-    nvm use 15.5.1
+    nvm use 14.17.1（修改为当前安装的版本）
     ```
 
 -   其他操作系统：自行网上搜索
 
-### 3、安装`npm`依赖包
+### 3、安装`npm`依赖包 **（非初次使用可跳过此步）**
 
 -   以`VSCode`为例：选中`tailwind-demo`文件夹，右键`在集成终端中打开`，执行`npm install`或`npm i`安装依赖
 
@@ -54,15 +56,19 @@
 
 -   在终端中运行以下命令，提取`class`到`/public/css/app.css`中
 
-    -   测试环境，提取所有`class`（启用 `JIT` 模式情况下，仅提取使用到的`class`，并且可以使用类名自定义值，如 `sm:w-[168px]、md:w-[calc(100%-168px)]`）
+    -   测试环境，提取使用到的`class`，并且可以使用类名自定义值，如 `sm:w-[168px]、md:w-[calc(100%-168px)]`
         ```
-        npm run dev
+        npm run watch
         ```
-    -   生产环境（线上环境），仅提取`使用到`的`class`
+    -   生产环境（线上环境），提取`使用到`的`class`并最小化`css`文件
         ```
         npm run prod
         ```
 
-### 5、上线项目
+-   **如需修改`public`文件夹名，需对应修改以下配置文件**
+    -   `webpack.mix.js`：配置文件中`setPublicPath('public')`路径
+    -   ` tailwind.config.js`：`purge `路径
+
+### 5、上线
 
 -   `public`里的所有文件即为最终使用的文件

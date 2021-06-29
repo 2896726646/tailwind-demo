@@ -1,12 +1,26 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
-    mode: "jit",
-    purge: ["./public/*.html"],
-    darkMode: false, // or 'media' or 'class'
+    mode: 'jit',
+
+    purge: ['./public/index.html'],
+
     theme: {
-        extend: {},
+        extend: {
+            fontFamily: {
+                sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+            },
+        },
     },
+
     variants: {
-        extend: {},
+        extend: {
+            opacity: ['disabled'],
+        },
     },
-    plugins: [],
+
+    plugins: [
+        require('@tailwindcss/forms'),
+        require('@tailwindcss/typography'),
+    ],
 };

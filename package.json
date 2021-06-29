@@ -1,4 +1,5 @@
 {
+    "private": true,
     "scripts": {
         "dev": "npm run development",
         "development": "mix",
@@ -8,10 +9,12 @@
         "prod": "npm run production",
         "production": "mix --production"
     },
-    "dependencies": {
-        "autoprefixer": "^10.2.4",
-        "laravel-mix": "^6.0.16",
-        "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.1.1"
+    "devDependencies": {
+        "@tailwindcss/forms": "^0.3.3",
+        "@tailwindcss/typography": "^0.4.1",
+        "laravel-mix": "^6.0.25",
+        "postcss": "^8.3.5",
+        "postcss-import": "^14.0.2",
+        "tailwindcss": "^2.2.4"
     }
 }
